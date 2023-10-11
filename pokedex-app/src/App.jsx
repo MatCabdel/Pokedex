@@ -44,8 +44,8 @@ function App() {
   return (
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <button onClick={lessClick}>Précedent</button>
-      <button onClick={handleClick}>Suivant</button>
+      {pokemonIndex > 0 && <button onClick={lessClick}>Précedent</button>}
+      {pokemonIndex < 4 && <button onClick={handleClick}>Suivant</button>}
   </div>
   );
 
