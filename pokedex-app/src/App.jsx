@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard"
 import NavBar from "./components/NavBar";
+import "./App.css";
 
 const pokemonList = [
   {
@@ -31,12 +32,16 @@ const pokemonList = [
 
 
 function App() {
+  
   const [pokemonIndex, setPokemonIndex] = useState(0);
-
+  
+  const handleClick = (pokemonIndex) => {
+    setPokemonIndex(pokemonIndex)
+    }
 
   return (
     <div>
-      <NavBar setPokemonIndex={setPokemonIndex} pokemonIndex={pokemonIndex} pokemonList={pokemonList}/>
+      <NavBar pokemonList={pokemonList} handleClick={handleClick}/>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
   </div>
   );
